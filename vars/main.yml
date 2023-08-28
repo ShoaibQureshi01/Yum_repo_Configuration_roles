@@ -1,0 +1,8 @@
+--- 
+repo: 
+       - name: AppStream 
+         baseurl: file:///mnt/AppStream 
+         description: AppStream 
+       - name: BaseOS 
+         baseurl: file:///mnt/BaseOS 
+         description: BaseOS 

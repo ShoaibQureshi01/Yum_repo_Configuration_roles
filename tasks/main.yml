@@ -1,0 +1,16 @@
+--- 
+- name: first check the iso file is mounted on the system 
+  mount: 
+      src: /dev/sr0 
+      path: /mnt 
+      state: present 
+      fstype: iso9660 
+- name: now create yum repositories 
+  yum_repository: 
+      name: "{{ item.repo.name }}" 
+      description: "{{ item.repo.description }}" 
+      baseurl: "{{ item.repo.baseurl }}" 
+      state: present 
+      gpgcheck: false 
+      enabled: true 
+  loop: "{{ repo }}" 
